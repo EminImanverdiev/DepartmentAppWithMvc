@@ -1,0 +1,32 @@
+﻿@using WebDepartment.Models;
+@model List<personel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Seher</th>
+        <th>Department</th>
+        <th>Sil</th>
+        <th>Yenile</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.perid</td>
+            <td>@item.ad</td>
+            <td>@item.soyad</td>
+            <td>@item.sehir</td>
+            <td>@item.departman.departmanad</td>
+            <td><a href="/personel/DeletePerson/@item.perid" class="btn btn-danger">Sil</a></td>
+            <td><a href="/personel/GetPerson/@item.perid" class="btn btn-success">Yenile</a></td>
+        </tr>
+    }
+</table>
+<a href="/personel/NewPerson/" class="btn btn-primary">Yeni Personel</a>
+

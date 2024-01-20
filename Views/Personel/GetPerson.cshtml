@@ -1,0 +1,30 @@
+﻿@model WebDepartment.Models.personel;
+@{
+    ViewData["Title"] = "GetPerson";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdatePerson", "personel", FormMethod.Post))
+{
+    @Html.LabelFor(x=>x.perid)
+    <br />
+    @Html.TextBoxFor(x=>x.perid,new { @class = "form-controler"})
+    <br />
+    @Html.LabelFor(x=>x.ad)
+    <br />
+    @Html.TextBoxFor(x=>x.ad,new { @class = "form-controler"})
+    <br />
+    @Html.LabelFor(x=>x.soyad)
+    <br />
+    @Html.TextBoxFor(x=>x.soyad,new { @class = "form-controler"})
+    <br />
+    @Html.LabelFor(x=>x.sehir)
+    <br />
+    @Html.TextBoxFor(x=>x.sehir,new { @class = "form-controler"})
+    <br />
+    @Html.LabelFor(x=>x.departmanid)
+    <br />
+    @Html.TextBoxFor(x=>x.departmanid,new { @class = "form-controler"})
+    <br />
+    <button class="btn btn-default" style="background-color:brown;color:white;margin-top:20px">Update Personel</button>
+}
